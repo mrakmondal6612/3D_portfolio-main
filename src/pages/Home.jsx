@@ -44,8 +44,8 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.95];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [0.9, 0.99, 0.95];
+      screenPosition = [0, -4.5, -43.4];
     } else {
       screenScale = [1, 1, 1];
       screenPosition = [0, -6.5, -43.4];
@@ -58,7 +58,7 @@ const Home = () => {
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
-    <section className='w-full h-screen relative'>
+    <section className='w-full md:h-screen max:h-screen h-[52rem] relative'>
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
@@ -104,7 +104,7 @@ const Home = () => {
         </Suspense>
       </Canvas>
 
-      <div className='absolute md:bottom-3 bottom-6 md:left-2 left-6'>
+      <div className='absolute md:bottom-2 bottom-8 md:left-2 left-6'>
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt='jukebox'
