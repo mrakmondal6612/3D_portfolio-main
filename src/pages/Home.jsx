@@ -30,7 +30,7 @@ const Home = () => {
 
     // If screen width is less than 768px, adjust the scale and position
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [1.5, 1.5, 1.65];
       screenPosition = [0, -1.5, 0];
     } else {
       screenScale = [3, 3, 3];
@@ -44,7 +44,7 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
+      screenScale = [0.9, 0.9, 0.95];
       screenPosition = [0, -6.5, -43.4];
     } else {
       screenScale = [1, 1, 1];
@@ -104,12 +104,12 @@ const Home = () => {
         </Suspense>
       </Canvas>
 
-      <div className='absolute bottom-2 left-2'>
+      <div className='absolute md:bottom-3 bottom-6 md:left-2 left-6'>
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt='jukebox'
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
+          className='w-12 h-12 cursor-pointer object-contain'
         />
       </div>
     </section>
